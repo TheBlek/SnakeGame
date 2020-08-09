@@ -36,6 +36,7 @@ class Snake:
         self.head = Node(x, y, D_UP)
         self.last = self.head
         self.turns = np.array([])
+        self.is_dead = False
 
     def move(self, time_elapsed):
         time_elapsed /= 1000
@@ -170,4 +171,4 @@ class Snake:
         self.handle_input(world.key_handler)
         self.move(time_elapsed)
         if (self.is_head_self_collision() or self.is_out_of_borders()):
-            pygame.event.post(pygame.event.Event(pygame.QUIT))
+            self.is_dead = True

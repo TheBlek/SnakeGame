@@ -4,10 +4,6 @@ import snake_class as snake
 import food_class as food
 import misc
 
-WIDTH = 800
-HEIGHT = 600
-ERROR = 0.5
-
 class World:
 
     def __init__(self):

@@ -56,3 +56,7 @@ class KeyHandler:
             return True
         self.prev_keys = keys
         return False
+
+def put_game_state_to_queue(new_state):
+    ev = pygame.event.Event(pygame.USEREVENT+1, new_state=new_state)
+    pygame.event.post(ev)
